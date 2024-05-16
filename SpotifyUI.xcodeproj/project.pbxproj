@@ -21,6 +21,7 @@
 		A8810ACB2BECE2B600958E47 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8810ACA2BECE2B600958E47 /* Category.swift */; };
 		A8810ACE2BECE6C200958E47 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8810ACD2BECE6C200958E47 /* HeaderView.swift */; };
 		A8810AD02BED0F8100958E47 /* RecentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8810ACF2BED0F8100958E47 /* RecentsView.swift */; };
+		A8810AD22BF6094300958E47 /* NewReleaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8810AD12BF6094200958E47 /* NewReleaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		A8810ACA2BECE2B600958E47 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		A8810ACD2BECE6C200958E47 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		A8810ACF2BED0F8100958E47 /* RecentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsView.swift; sourceTree = "<group>"; };
+		A8810AD12BF6094200958E47 /* NewReleaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				A8810AC72BECE1FC00958E47 /* CategoryCell.swift */,
 				A8810ACD2BECE6C200958E47 /* HeaderView.swift */,
 				A8810ACF2BED0F8100958E47 /* RecentsView.swift */,
+				A8810AD12BF6094200958E47 /* NewReleaseView.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				A8810ACB2BECE2B600958E47 /* Category.swift in Sources */,
 				A8810AD02BED0F8100958E47 /* RecentsView.swift in Sources */,
 				A8810AC62BECE09A00958E47 /* HomeView.swift in Sources */,
+				A8810AD22BF6094300958E47 /* NewReleaseView.swift in Sources */,
 				A8810AC12BECD94E00958E47 /* Product.swift in Sources */,
 				A8810AC32BECDB9100958E47 /* User.swift in Sources */,
 			);

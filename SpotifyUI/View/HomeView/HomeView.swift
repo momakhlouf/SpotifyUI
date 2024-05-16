@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var viewModel: ViewModel = ViewModel()
     @State private var currentUser: User? = nil
     var body: some View {
         ZStack{
@@ -15,9 +16,17 @@ struct HomeView: View {
                 .ignoresSafeArea()
             
             ScrollView{
-                LazyVStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, pinnedViews: .sectionHeaders, content: {
+                LazyVStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/,
+                           spacing: nil,
+                           pinnedViews: .sectionHeaders,
+                           content: {
                     Section {
-                        RecentsView()
+                        VStack(spacing: 16){
+                            RecentsView()
+                            if let product = viewModel.Products.first{
+                             newReleaseSection(product: product)
+                            }
+                        }
                     } header: {
                         HeaderView()
 
@@ -28,9 +37,27 @@ struct HomeView: View {
             .scrollIndicators(.hidden)
             .clipped()
         }
+        .task {
+            try! await viewModel.getProducts()
+        }
     }
 }
 
 #Preview {
     HomeView()
+}
+
+extension HomeView{
+    func newReleaseSection(product: Product) -> some View{
+        NewReleaseView(
+            headline: product.brand,
+            subheadline: product.category,
+            title: product.title,
+            subtitle: product.description,
+            onAddToPlaylistPressed: {
+            },
+            onPlayPressed: {
+            }
+        )
+    }
 }

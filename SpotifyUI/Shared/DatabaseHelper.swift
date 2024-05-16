@@ -12,6 +12,7 @@ class ViewModel: ObservableObject{
     @Published var Products : [Product] = []
     @Published var users : [Product] = []
 
+    
     func getProducts()async throws {//}-> [Product]{
         guard let url = URL(string: "https://dummyjson.com/products") else{
             throw URLError(.badURL)

@@ -40,6 +40,7 @@ extension RecentsView{
                 .frame(width: 60, height: 60)
             
             Text(product.title)
+                .foregroundStyle(.spotifyWhite)
                 .fontWeight(.semibold)
                 .lineLimit(2)
             //  Spacer()
