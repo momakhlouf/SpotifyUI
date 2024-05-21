@@ -26,6 +26,8 @@ struct HomeView: View {
                             if let product = viewModel.Products.first{
                              newReleaseSection(product: product)
                             }
+                           listRows
+                            
                         }
                     } header: {
                         HeaderView()
@@ -38,13 +40,15 @@ struct HomeView: View {
             .clipped()
         }
         .task {
-            try! await viewModel.getProducts()
+             try! await viewModel.getProducts()
         }
     }
 }
 
 #Preview {
-    HomeView()
+    NavigationStack{
+        HomeView()
+    }
 }
 
 extension HomeView{
@@ -60,4 +64,34 @@ extension HomeView{
             }
         )
     }
+    
+    var listRows: some View{
+        ForEach(viewModel.productRows){ row in
+            VStack{
+                Text(row.title)
+                    .font(.title)
+                    .foregroundStyle(.spotifyWhite)
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                    .padding(.horizontal, 16)
+
+                
+                ScrollView(.horizontal){
+                    HStack(alignment: .top , spacing: 16){
+                        ForEach(row.products){ product in
+                            NavigationLink {
+                                PlayListView(product: product, user: User.mock)
+                            } label: {
+                                ImageTitleRowCell(title: product.title, imageName: product.thumbnail)
+
+                            }
+
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+    
 }

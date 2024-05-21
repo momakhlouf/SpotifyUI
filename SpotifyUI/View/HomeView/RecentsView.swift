@@ -16,7 +16,11 @@ struct RecentsView: View {
         ScrollView(.horizontal){
             LazyHGrid(rows: rows, spacing: 10){
                 ForEach(viewModel.Products){ product in
-                    recentsCell(product: product)
+                    NavigationLink {
+                        PlayListView(product: product, user: User.mock)
+                    } label: {
+                        recentsCell(product: product)
+                    }
                 }
             }
         }
